@@ -49,7 +49,12 @@ public class FilmRESTController {
 	
 	@RequestMapping(value="/filmsgenre/{idGenre}",method = RequestMethod.GET)
 	public List<Film> getFilmsByGenreId(@PathVariable("idGenre") Long idGenre) {
-	return filmService.findByGenreIdGenre(idGenre);
+		return filmService.findByGenreIdGenre(idGenre);
+	}
+	
+	@RequestMapping(value="/filmsByTitre/{titre}",method = RequestMethod.GET)
+	public List<Film> findByTitreFilmContains(@PathVariable("titre") String titre) {
+		return filmService.findByTitreFilmContains(titre);
 	}
 
 }
